@@ -137,6 +137,34 @@ export const USDC_BASE = new Token(
   'USDC',
   'USD Coin'
 )
+export const USDC_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0x4e2A69532D5C9e37F83f001B183397bb0DF5422b',
+  6,
+  'USDC',
+  'USDC'
+)
+export const USDB_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0x4200000000000000000000000000000000000022',
+  6,
+  'USDB',
+  'USDB'
+)
+export const WBTC_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0x684063aB93Aa493F8a1389cD2Fbc5E9fBd324A91',
+  8,
+  'WBTC',
+  'WBTC'
+)
+export const USDT_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0xBfeC5826db705250f2AF5cC7C66910879b8EF930',
+  8,
+  'USDT',
+  'USDT'
+)
 export const USDC: { [chainId in SupportedChainId]: Token } = {
   [SupportedChainId.MAINNET]: USDC_MAINNET,
   [SupportedChainId.ARBITRUM_ONE]: USDC_ARBITRUM,
@@ -153,6 +181,7 @@ export const USDC: { [chainId in SupportedChainId]: Token } = {
   [SupportedChainId.ROPSTEN]: USDC_ROPSTEN,
   [SupportedChainId.BNB]: USDC_BNB_CHAIN,
   [SupportedChainId.BASE]: USDC_BASE,
+  [SupportedChainId.BLAST_SEPOLIA]: USDC_BLAST_SEPOLIA,
 }
 export const DAI_POLYGON = new Token(
   SupportedChainId.POLYGON,
@@ -423,6 +452,13 @@ export const DAI_BASE = new Token(
   'Dai Stablecoin'
 )
 
+export const ETH_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0x4200000000000000000000000000000000000023',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
 function isBnbChain(chainId: number): chainId is SupportedChainId.BNB {
   return chainId === SupportedChainId.BNB
 }
@@ -513,6 +549,7 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'WETH',
     'Wrapped Ether'
   ),
+  [SupportedChainId.BLAST_SEPOLIA]: ETH_BLAST_SEPOLIA,
 }
 
 export function isCelo(chainId: number): chainId is SupportedChainId.CELO | SupportedChainId.CELO_ALFAJORES {

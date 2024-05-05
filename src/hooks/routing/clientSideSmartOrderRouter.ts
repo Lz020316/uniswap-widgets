@@ -40,7 +40,7 @@ function getRouter(chainId: ChainId, provider: BaseProvider): AlphaRouter {
   if (chainId !== ChainId.MAINNET) {
     v2SubgraphProvider = new StaticV2SubgraphProvider(chainId)
   }
-
+  console.log('v2SubgraphProvider: >>>>>', v2SubgraphProvider)
   // V3 computes on-chain, so the quoter must have gas limits appropriate to the provider.
   // Most defaults are fine, but polygon needs a lower gas limit.
   // TODO(zzmp): Upstream to @uniswap/smart-order-router, possibly making this easier to modify
@@ -108,8 +108,9 @@ async function getQuoteResult(
   const baseCurrency = isExactInput(tradeType) ? currencyIn : currencyOut
   const quoteCurrency = isExactInput(tradeType) ? currencyOut : currencyIn
   const amount = CurrencyAmount.fromRawAmount(baseCurrency, JSBI.BigInt(amountRaw ?? '1')) // a null amountRaw should initialize the route
+  console.log('router params ---------: >>>>>', amount, quoteCurrency, tradeType)
   const route = await router.route(amount, quoteCurrency, tradeType, /*swapConfig=*/ undefined, routerConfig)
-
+  // console.log('route: >>>>>', route)
   if (!amountRaw) return { state: QuoteState.INITIALIZED }
   if (!route) return { state: QuoteState.NOT_FOUND }
 
@@ -135,8 +136,9 @@ export async function getClientSideQuoteResult(
   if (!isAutoRouterSupportedChain(tokenInChainId)) {
     throw new Error(`Router does not support this token's chain (chainId: ${tokenInChainId}).`)
   }
-
+  debugger
   const router = getRouter(tokenInChainId, provider)
+  console.log('router: >>>>>', router)
   return getQuoteResult(
     {
       tradeType,

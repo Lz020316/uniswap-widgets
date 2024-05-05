@@ -95,4 +95,10 @@ export const JSON_RPC_FALLBACK_ENDPOINTS: Record<SupportedChainId, string[]> = {
     'https://1rpc.io/base',
     'https://base.meowrpc.com',
   ],
+  [SupportedChainId.BLAST_SEPOLIA]: [
+    // "Safe" URLs
+    'https://sepolia.blast.io',
+    'https://rpc.ankr.com/blast',
+    'https://blast.din.dev/rpc',
+  ],
 }

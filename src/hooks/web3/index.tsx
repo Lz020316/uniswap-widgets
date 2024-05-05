@@ -24,7 +24,7 @@ import {
   toJsonRpcUrlMap,
 } from './useJsonRpcUrlsMap'
 
-const DEFAULT_CHAIN_ID = SupportedChainId.MAINNET
+const DEFAULT_CHAIN_ID = SupportedChainId.BLAST_SEPOLIA
 
 type Web3ReactConnector<T extends Connector = Connector> = [T, Web3ReactHooks]
 

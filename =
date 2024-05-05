@@ -1,0 +1,76 @@
+yarn add v1.22.18
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+success Saved 2 new dependencies.
+info Direct dependencies
+├─ 5@0.0.1
+└─ styled-components@6.1.9
+info All dependencies
+├─ 5@0.0.1
+└─ styled-components@6.1.9
+$ yarn concurrently "npm:contracts:compile" "npm:i18n:compile" "npm:ajv:compile"
+yarn run v1.22.18
+$ /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/node_modules/.bin/concurrently npm:contracts:compile npm:i18n:compile npm:ajv:compile
+[contracts:compile] 
+[contracts:compile] > contracts:compile
+[contracts:compile] > yarn contracts:compile:abi && yarn contracts:compile:v3
+[contracts:compile] 
+[ajv:compile] 
+[ajv:compile] > ajv:compile
+[ajv:compile] > node scripts/compileAjvValidators.js
+[ajv:compile] 
+[i18n:compile] 
+[i18n:compile] > prei18n:compile
+[i18n:compile] > lingui extract --locale en-US
+[i18n:compile] 
+[ajv:compile] npm run ajv:compile exited with code 0
+[contracts:compile] $ typechain --target ethers-v5 --out-dir src/abis/types "./src/abis/**/*.json"
+[i18n:compile] Browserslist: caniuse-lite is outdated. Please run:
+[i18n:compile]   npx browserslist@latest --update-db
+[i18n:compile]   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+[contracts:compile] Successfully generated 24 typings!
+[contracts:compile] $ typechain --target ethers-v5 --out-dir src/types/v3 "./node_modules/@uniswap/**/artifacts/contracts/**/*.json"
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/ActionButton.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/BottomSheetModal.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/BrandedFooter.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Button.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Column.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/ConnectWallet/ConnectedWalletChip.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/ConnectWallet'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/ConnectWallet/ConnectWalletDialog.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/ConnectWallet'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Dialog.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Error/ErrorView.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Error'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/EtherscanLink.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Expando.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Header.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Input.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Logo/index.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Logo'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Popover.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Row.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Rule.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Input.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Output.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/ReverseButton.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/RoutingDiagram/index.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/RoutingDiagram'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Settings/components.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Settings'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Settings/index.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Settings'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Settings/MaxSlippageSelect.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Settings'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Settings/TransactionTtlInput.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Settings'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Skeleton.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Speedbump/index.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Speedbump'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Status/StatusDialog.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Status'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Summary/Details.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Summary'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Summary/Estimate.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Summary'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Summary/index.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Summary'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Summary/Summary.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Summary'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/TokenInput.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Toolbar/Caption.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Toolbar'
+[i18n:compile] Cannot process file /Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Toolbar/index.tsx: Cannot find module 'styled-components/macro' from '/Users/lizhong/Desktop/workspace/BlockChain/uniswap/uniswap-widgets/src/components/Swap/Toolbar'
+[i18n:compile] 
+[i18n:compile] > i18n:compile
+[i18n:compile] > lingui compile
+[i18n:compile] 
+[contracts:compile] npm run contracts:compile exited with code SIGINT
+[i18n:compile] npm run i18n:compile exited with code SIGINT

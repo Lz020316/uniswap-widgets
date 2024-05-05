@@ -111,7 +111,7 @@ function Fixture() {
       theme={theme}
       tokenList={tokenList}
       width={width}
-      routerUrl={routerUrl}
+      // routerUrl={routerUrl}
       brandedFooter={brandedFooter}
       dialogOptions={{
         animationType: dialogAnimation,

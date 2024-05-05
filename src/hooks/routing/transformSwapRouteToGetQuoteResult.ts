@@ -18,7 +18,6 @@ export function transformSwapRouteToGetQuoteResult({
   trade: { tradeType, inputAmount, outputAmount },
 }: SwapRoute & { routeString: string }): QuoteResult {
   const routeResponse: Array<V3PoolInRoute[] | V2PoolInRoute[]> = []
-
   for (const subRoute of route) {
     const { amount, quote, tokenPath } = subRoute
 

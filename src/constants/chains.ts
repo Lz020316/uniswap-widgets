@@ -23,6 +23,8 @@ export enum SupportedChainId {
   BNB = 56,
 
   BASE = 8453,
+
+  BLAST_SEPOLIA = 168587773,
 }
 
 export enum ChainName {
@@ -41,6 +43,7 @@ export enum ChainName {
   CELO_ALFAJORES = 'celo-alfajores',
   BNB = 'bnb',
   BASE = 'base',
+  BLAST_SEPOLIA = 'blast-sepolia',
 }
 
 export const CHAIN_NAMES_TO_IDS: { [chainName: string]: SupportedChainId } = {
@@ -59,6 +62,7 @@ export const CHAIN_NAMES_TO_IDS: { [chainName: string]: SupportedChainId } = {
   [ChainName.CELO_ALFAJORES]: SupportedChainId.CELO_ALFAJORES,
   [ChainName.BNB]: SupportedChainId.BNB,
   [ChainName.BASE]: SupportedChainId.BASE,
+  [ChainName.BLAST_SEPOLIA]: SupportedChainId.BLAST_SEPOLIA,
 }
 
 /**
@@ -105,6 +109,7 @@ export const L2_CHAIN_IDS = [
   SupportedChainId.OPTIMISM,
   SupportedChainId.OPTIMISM_GOERLI,
   SupportedChainId.BASE,
+  SupportedChainId.BLAST_SEPOLIA,
 ] as const
 
 export type SupportedL2ChainId = typeof L2_CHAIN_IDS[number]

@@ -1,4 +1,5 @@
 import { TokenInfo } from '@uniswap/token-lists'
+import { SupportedChainId } from '@uniswap/widgets'
 import { DialogWidgetProps, Provider as DialogProvider } from 'components/Dialog'
 import ErrorBoundary, { OnError } from 'components/Error/ErrorBoundary'
 import { SupportedLocale } from 'constants/locales'
@@ -17,6 +18,7 @@ import { MulticallUpdater } from 'state/multicall'
 import styled from 'styled-components/macro'
 import { Provider as ThemeProvider, Theme } from 'theme'
 
+import { ETH_BLAST_SEPOLIA, USDC_BLAST_SEPOLIA, USDT_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from "../constants/tokens";
 import WidgetWrapper from './WidgetWrapper'
 
 export const DialogWrapper = styled.div`
@@ -42,7 +44,65 @@ export interface WidgetProps
   className?: string
   onError?: OnError
 }
+/*
+tokenList: string | TokenInfo[]; // Token list to use for token selection.
+[
+  {
+    "chainId": SupportedChainId.BLAST_SEPOLIA,
+    "address":
+    "symbol": "DAI",
+    "name": "Dai Stablecoin",
+    "decimals": 18,
+    "logoURI": "https://assets.coingecko.com/coins/images/9956/thumb/dai-multi-collateral-mcd.png"
+  }
+]
 
+* */
+const blast_sepolia: TokenInfo[] = [
+  {
+    chainId: SupportedChainId.BLAST_SEPOLIA,
+    address: ETH_BLAST_SEPOLIA.address,
+    symbol: ETH_BLAST_SEPOLIA.symbol as string,
+    name: ETH_BLAST_SEPOLIA.name as string,
+    decimals: ETH_BLAST_SEPOLIA.decimals,
+    logoURI: 'https://assets.coingecko.com/coins/images/279/thumb/ethereum.png',
+  },
+  {
+    chainId: SupportedChainId.BLAST_SEPOLIA,
+    address: WBTC_BLAST_SEPOLIA.address,
+    symbol: WBTC_BLAST_SEPOLIA.symbol as string,
+    name: WBTC_BLAST_SEPOLIA.name as string,
+    decimals: WBTC_BLAST_SEPOLIA.decimals,
+    logoURI:
+      'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png',
+  },
+  {
+    chainId: SupportedChainId.BLAST_SEPOLIA,
+    address: '0x982Ebde77c10B7155A73d59c0437aC556F7F7b01',
+    symbol: 'F(BTC,20)',
+    name: 'F(BTC,20)',
+    decimals: 6,
+    logoURI: 'https://mappingfunk.xyz/svg/fbtc20.svg',
+  },
+  {
+    chainId: SupportedChainId.BLAST_SEPOLIA,
+    address: USDC_BLAST_SEPOLIA.address,
+    symbol: USDC_BLAST_SEPOLIA.symbol as string,
+    name: USDC_BLAST_SEPOLIA.name as string,
+    decimals: USDC_BLAST_SEPOLIA.decimals,
+    logoURI:
+      'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png',
+  },
+  {
+    chainId: SupportedChainId.BLAST_SEPOLIA,
+    address: USDT_BLAST_SEPOLIA.address,
+    symbol: USDT_BLAST_SEPOLIA.symbol as string,
+    name: USDT_BLAST_SEPOLIA.name as string,
+    decimals: USDT_BLAST_SEPOLIA.decimals,
+    logoURI:
+      'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png',
+  },
+]
 export default function Widget(props: PropsWithChildren<WidgetProps>) {
   const [dialog, setDialog] = useState<HTMLDivElement | null>(props.dialog || null)
   return (
@@ -63,7 +123,7 @@ export default function Widget(props: PropsWithChildren<WidgetProps>) {
                       <BlockNumberProvider>
                         <MulticallUpdater />
                         <TransactionsUpdater {...(props as TransactionEventHandlers)} />
-                        <TokenListProvider list={props.tokenList}>{props.children}</TokenListProvider>
+                        <TokenListProvider list={blast_sepolia}>{props.children}</TokenListProvider>
                       </BlockNumberProvider>
                     </Web3Provider>
                   </AtomProvider>

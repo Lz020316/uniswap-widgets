@@ -57,12 +57,20 @@ class RollupPlugin extends EventEmitter {
 module.exports = (webpackConfig) => {
   const { mode, module, resolve } = webpackConfig
   const { rules } = module
+  console.log('webpackConfig', webpackConfig)
   return {
     ...webpackConfig,
     resolve: {
       ...resolve,
       alias: {
         '@uniswap/widgets': path.resolve(__dirname, 'dist/'),
+      },
+      fallback: {
+        http: require.resolve('stream-http'),
+        https: require.resolve('https-browserify'),
+        path: false,
+        fs: false,
+        assert: false,
       },
     },
     module: {

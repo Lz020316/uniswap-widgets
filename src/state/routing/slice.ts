@@ -9,8 +9,7 @@ import { isExactInput } from 'utils/tradeType'
 import { serializeGetQuoteArgs, serializeGetQuoteQueryArgs } from './args'
 import { GetQuoteArgs, QuoteData, QuoteState, TradeResult } from './types'
 import { transformQuoteToTradeResult } from './utils'
-
-const protocols: Protocol[] = [Protocol.V2, Protocol.V3, Protocol.MIXED]
+const protocols: Protocol[] = [Protocol.V2]
 
 // routing API quote query params: https://github.com/Uniswap/routing-api/blob/main/lib/handlers/quote/schema/quote-schema.ts
 const DEFAULT_QUERY_PARAMS = {
@@ -20,7 +19,7 @@ const DEFAULT_QUERY_PARAMS = {
 const baseQuery: BaseQueryFn<GetQuoteArgs, TradeResult, FetchBaseQueryError> = () => {
   return { error: { status: 'CUSTOM_ERROR', error: 'Unimplemented baseQuery' } }
 }
-
+// console.log('baseQuery', baseQuery, serializeGetQuoteQueryArgs)
 export const routing = createApi({
   reducerPath: 'routing',
   baseQuery,
@@ -28,6 +27,7 @@ export const routing = createApi({
   endpoints: (build) => ({
     getTradeQuote: build.query<TradeResult, GetQuoteArgs | SkipToken>({
       async onQueryStarted(args, { queryFulfilled }) {
+        console.log('onQueryStarted', args)
         if (args === skipToken) return
 
         args.onQuote?.(
@@ -55,6 +55,7 @@ export const routing = createApi({
       },
       // Explicitly typing the return type enables typechecking of return values.
       async queryFn(args: GetQuoteArgs | SkipToken) {
+        console.log('queryFn', args)
         if (args === skipToken) return { error: { status: 'CUSTOM_ERROR', error: 'Skipped' } }
 
         if (

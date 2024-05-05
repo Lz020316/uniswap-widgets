@@ -24,7 +24,9 @@ import {
   sETH2,
   SWISE,
   TRIBE,
+  USDB_BLAST_SEPOLIA,
   USDC_BASE,
+  USDC_BLAST_SEPOLIA,
   USDC_BNB_CHAIN,
   USDC_MAINNET,
   USDC_POLYGON,
@@ -35,6 +37,7 @@ import {
   USDT_POLYGON,
   WBTC,
   WBTC_ARBITRUM_ONE,
+  WBTC_BLAST_SEPOLIA,
   WBTC_OPTIMISM,
   WETH_POLYGON,
   WRAPPED_NATIVE_CURRENCY,
@@ -95,6 +98,12 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     ...WRAPPED_NATIVE_CURRENCIES_ONLY[SupportedChainId.BNB],
   ],
   [SupportedChainId.BASE]: [...WRAPPED_NATIVE_CURRENCIES_ONLY[SupportedChainId.BASE], DAI_BASE, USDC_BASE],
+  [SupportedChainId.BLAST_SEPOLIA]: [
+    nativeOnChain(SupportedChainId.BLAST_SEPOLIA),
+    USDC_BLAST_SEPOLIA,
+    USDB_BLAST_SEPOLIA,
+    WBTC_BLAST_SEPOLIA,
+  ],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [SupportedChainId.MAINNET]: {
