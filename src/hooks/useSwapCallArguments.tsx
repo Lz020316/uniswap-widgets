@@ -71,6 +71,7 @@ export function useSwapCallArguments(
           }
         : {}),
     }
+    console.log('swapCallParameters', trade)
     const { value, calldata } = SwapRouter.swapCallParameters(trade, swapOptions)
 
     if (argentWalletContract && trade.inputAmount.currency.isToken) {

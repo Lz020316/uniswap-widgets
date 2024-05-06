@@ -18,7 +18,7 @@ import { MulticallUpdater } from 'state/multicall'
 import styled from 'styled-components/macro'
 import { Provider as ThemeProvider, Theme } from 'theme'
 
-import { ETH_BLAST_SEPOLIA, USDC_BLAST_SEPOLIA, USDT_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from "../constants/tokens";
+import { USDC_BLAST_SEPOLIA, USDT_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from "../constants/tokens";
 import WidgetWrapper from './WidgetWrapper'
 
 export const DialogWrapper = styled.div`
@@ -59,14 +59,6 @@ tokenList: string | TokenInfo[]; // Token list to use for token selection.
 
 * */
 const blast_sepolia: TokenInfo[] = [
-  {
-    chainId: SupportedChainId.BLAST_SEPOLIA,
-    address: ETH_BLAST_SEPOLIA.address,
-    symbol: ETH_BLAST_SEPOLIA.symbol as string,
-    name: ETH_BLAST_SEPOLIA.name as string,
-    decimals: ETH_BLAST_SEPOLIA.decimals,
-    logoURI: 'https://assets.coingecko.com/coins/images/279/thumb/ethereum.png',
-  },
   {
     chainId: SupportedChainId.BLAST_SEPOLIA,
     address: WBTC_BLAST_SEPOLIA.address,

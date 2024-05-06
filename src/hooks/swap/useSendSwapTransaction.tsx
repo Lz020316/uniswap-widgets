@@ -41,6 +41,7 @@ export default function useSendSwapTransaction(
     if (!trade || !provider || !account || !chainId) {
       return { callback: null }
     }
+    console.log('useSendSwapTransaction', trade, swapCalls)
     return {
       callback: async function onSwap(): Promise<TransactionResponse> {
         const estimatedCalls: SwapCallEstimate[] = await Promise.all(
@@ -56,10 +57,11 @@ export default function useSendSwapTransaction(
                     data: calldata,
                     value,
                   }
-
+            console.log('tx', tx)
             return provider
               .estimateGas(tx)
               .then((gasEstimate) => {
+                console.debug('Gas estimate succeeded', call, gasEstimate)
                 return {
                   call,
                   gasEstimate,
