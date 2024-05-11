@@ -57,7 +57,7 @@ export function TestableProvider({ provider, children }: PropsWithChildren<{ pro
 }
 
 export function Provider({
-  defaultChainId: chainId = SupportedChainId.MAINNET,
+  defaultChainId: chainId = SupportedChainId.BLAST_SEPOLIA,
   jsonRpcUrlMap,
   provider,
   children,

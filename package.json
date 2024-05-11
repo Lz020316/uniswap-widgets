@@ -98,8 +98,8 @@
     "polished": "^3.7.2",
     "popper-max-size-modifier": "^0.2.0",
     "qrcode": "^1.5.0",
-    "react": ">=17.0.1",
-    "react-dom": ">=17.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "react-feather": "^2.0.8",
     "react-popper": "^2.2.3",
     "react-redux": ">=7.2.2",
@@ -119,8 +119,8 @@
   "peerDependencies": {
     "@babel/runtime": ">=7.17.0",
     "ethers": "^5.7.2",
-    "react": ">=17.0.1",
-    "react-dom": ">=17.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "react-redux": ">=7.2.2",
     "redux": ">=4.1.2",
     "styled-components": ">=5"

@@ -75,11 +75,11 @@ function Fixture() {
 
   const defaultNetwork = useOption('defaultChainId', {
     options: Object.keys(CHAIN_NAMES_TO_IDS),
-    defaultValue: 'mainnet',
+    defaultValue: 'blast-sepolia',
   })
   const defaultChainId = defaultNetwork ? CHAIN_NAMES_TO_IDS[defaultNetwork] : undefined
 
-  const connector = useProvider(defaultChainId)
+  const connector = useProvider(SupportedChainId.BLAST_SEPOLIA)
 
   const tokenList = useOption('tokenList', { options: tokenLists, defaultValue: 'Default', nullable: false })
 

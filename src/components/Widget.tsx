@@ -1,5 +1,4 @@
 import { TokenInfo } from '@uniswap/token-lists'
-import { SupportedChainId } from '@uniswap/widgets'
 import { DialogWidgetProps, Provider as DialogProvider } from 'components/Dialog'
 import ErrorBoundary, { OnError } from 'components/Error/ErrorBoundary'
 import { SupportedLocale } from 'constants/locales'
@@ -18,7 +17,8 @@ import { MulticallUpdater } from 'state/multicall'
 import styled from 'styled-components/macro'
 import { Provider as ThemeProvider, Theme } from 'theme'
 
-import { USDC_BLAST_SEPOLIA, USDT_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from "../constants/tokens";
+import { SupportedChainId } from '../constants/chains'
+import { USDC_BLAST_SEPOLIA, USDT_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from '../constants/tokens'
 import WidgetWrapper from './WidgetWrapper'
 
 export const DialogWrapper = styled.div`

@@ -136,9 +136,7 @@ export async function getClientSideQuoteResult(
   if (!isAutoRouterSupportedChain(tokenInChainId)) {
     throw new Error(`Router does not support this token's chain (chainId: ${tokenInChainId}).`)
   }
-  debugger
   const router = getRouter(tokenInChainId, provider)
-  console.log('router: >>>>>', router)
   return getQuoteResult(
     {
       tradeType,
