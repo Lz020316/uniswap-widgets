@@ -59,6 +59,7 @@ module.exports = (webpackConfig) => {
   const { rules } = module
   return {
     ...webpackConfig,
+    publicPath: '/swap',
     resolve: {
       ...resolve,
       alias: {
