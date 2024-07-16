@@ -158,13 +158,29 @@ export const WBTC_BLAST_SEPOLIA = new Token(
   'WBTC',
   'WBTC'
 )
+export const FBTC20_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0x982Ebde77c10B7155A73d59c0437aC556F7F7b01',
+  6,
+  'F(FBTC,20)',
+  'F(FBTC,20)'
+)
+export const FBTC25_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0xdc5461ad03596f2D56C15967258c25D23319a89b',
+  6,
+  'F(FBTC,25)',
+  'F(FBTC,25)'
+)
+
 export const USDT_BLAST_SEPOLIA = new Token(
   SupportedChainId.BLAST_SEPOLIA,
   '0xBfeC5826db705250f2AF5cC7C66910879b8EF930',
-  8,
+  18,
   'USDT',
   'USDT'
 )
+
 export const USDC: { [chainId in SupportedChainId]: Token } = {
   [SupportedChainId.MAINNET]: USDC_MAINNET,
   [SupportedChainId.ARBITRUM_ONE]: USDC_ARBITRUM,
@@ -549,7 +565,7 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'WETH',
     'Wrapped Ether'
   ),
-  [SupportedChainId.BLAST_SEPOLIA]: ETH_BLAST_SEPOLIA,
+  [SupportedChainId.BLAST_SEPOLIA]: WBTC_BLAST_SEPOLIA,
 }
 
 export function isCelo(chainId: number): chainId is SupportedChainId.CELO | SupportedChainId.CELO_ALFAJORES {

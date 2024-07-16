@@ -1,0 +1,15 @@
+yarn run v1.22.22
+$ cosmos
+[Cosmos] Using cosmos config found at cosmos.config.json
+[Cosmos] See you at http://localhost:3000
+[Cosmos] Using default webpack config
+[Cosmos] Overriding webpack config at webpack.cosmos.js
+[Cosmos] Building webpack...
+rollup building...
+rollup built src/index.tsx in 9209ms
+webpack built 512f67c96cdc831232d8 in 18347ms
+webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/clientSideSmartOrderRouter-f13f7933.js
+webpack building...
+webpack built 3de82ece576377438e5c in 3207ms
+webpack compiled successfully

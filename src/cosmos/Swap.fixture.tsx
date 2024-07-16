@@ -58,7 +58,7 @@ function Fixture() {
     DAI: DAI.address,
     USDC: USDC_MAINNET.address,
   }
-  const defaultInputToken = useOption('defaultInputToken', { options: currencies, defaultValue: 'Native' })
+  const defaultInputToken = useOption('defaultInputToken', { options: currencies, defaultValue: 'F(BTC,20)' })
   const [defaultInputAmount] = useValue('defaultInputAmount', { defaultValue: 0 })
   const defaultOutputToken = useOption('defaultOutputToken', { options: currencies })
   const [defaultOutputAmount] = useValue('defaultOutputAmount', { defaultValue: 0 })
@@ -67,7 +67,7 @@ function Fixture() {
   const [hideConnectionUI] = useValue('hideConnectionUI', { defaultValue: false })
   const [pageCentered] = useValue('pageCentered', { defaultValue: false })
 
-  const [width] = useValue('width', { defaultValue: 360 })
+  const [width] = useValue('width', { defaultValue: 682 })
 
   const [theme, setTheme] = useValue('theme', { defaultValue: defaultTheme })
   const [darkMode] = useValue('darkMode', { defaultValue: false })
@@ -98,17 +98,24 @@ function Fixture() {
 
   const widget = (
     <SwapWidget
-      permit2
       convenienceFee={convenienceFee}
       convenienceFeeRecipient={convenienceFeeRecipient}
-      defaultInputTokenAddress={defaultInputToken}
+      // defaultInputTokenAddress={defaultInputToken}
       defaultInputAmount={defaultInputAmount}
-      defaultOutputTokenAddress={defaultOutputToken}
+      defaultOutputTokenAddress={"0x982Ebde77c10B7155A73d59c0437aC556F7F7b01"}
       defaultOutputAmount={defaultOutputAmount}
       hideConnectionUI={hideConnectionUI}
       defaultChainId={defaultChainId}
       provider={connector}
-      theme={theme}
+      theme={{
+        container:"rgba(244, 246, 254, 1)",
+        module:"rgba(222, 241, 255, 1)",
+        primary:"rgba(97, 102, 119, 1)",
+        secondary:"rgba(0, 0, 0, 0.64)",
+        interactive:"rgba(110, 214, 243, 1)",
+        accent: "rgba(110, 214, 243, 1)"
+      }}
+      defaultInputTokenAddress={"0x684063aB93Aa493F8a1389cD2Fbc5E9fBd324A91"}
       tokenList={tokenList}
       width={width}
       // routerUrl={routerUrl}
@@ -123,12 +130,11 @@ function Fixture() {
 
   // If framed in a different origin, only display the SwapWidget, without any chrome.
   // This is done to faciliate iframing in the documentation (https://docs.uniswap.org).
-  if (!window.frameElement) return widget
+  // if (!window.frameElement) return widget
 
   return (
     <Row flex align="start" justify="start" gap={0.5}>
       {widget}
-      <EventFeed events={events} onClear={() => setEvents([])} />
     </Row>
   )
 }

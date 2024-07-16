@@ -1,4 +1,5 @@
 import { useWeb3React } from '@web3-react/core'
+import { SupportedChainId } from 'constants/chains'
 import { nativeOnChain } from 'constants/tokens'
 import { useTokenBalances } from 'hooks/useCurrencyBalance'
 import useDebounce from 'hooks/useDebounce'
@@ -25,6 +26,9 @@ export function useQueryTokens(query: string, tokens: WrappedTokenInfo[]) {
 
   const native = useMemo(() => chainId && nativeOnChain(chainId), [chainId])
   return useMemo(() => {
+    if (chainId === SupportedChainId.BLAST_SEPOLIA) {
+      return queriedTokens
+    }
     if (native && filter(native)) {
       return [native, ...queriedTokens]
     }

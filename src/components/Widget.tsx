@@ -1,4 +1,5 @@
 import { TokenInfo } from '@uniswap/token-lists'
+import FBTC20ICON from 'assets/svg/fbtc20.svg'
 import { DialogWidgetProps, Provider as DialogProvider } from 'components/Dialog'
 import ErrorBoundary, { OnError } from 'components/Error/ErrorBoundary'
 import { SupportedLocale } from 'constants/locales'
@@ -18,7 +19,7 @@ import styled from 'styled-components/macro'
 import { Provider as ThemeProvider, Theme } from 'theme'
 
 import { SupportedChainId } from '../constants/chains'
-import { USDC_BLAST_SEPOLIA, USDT_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from '../constants/tokens'
+import { FBTC20_BLAST_SEPOLIA, FBTC25_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from '../constants/tokens'
 import WidgetWrapper from './WidgetWrapper'
 
 export const DialogWrapper = styled.div`
@@ -70,30 +71,38 @@ const blast_sepolia: TokenInfo[] = [
   },
   {
     chainId: SupportedChainId.BLAST_SEPOLIA,
-    address: '0x982Ebde77c10B7155A73d59c0437aC556F7F7b01',
-    symbol: 'F(BTC,20)',
-    name: 'F(BTC,20)',
-    decimals: 6,
-    logoURI: 'https://mappingfunk.xyz/svg/fbtc20.svg',
+    address: FBTC20_BLAST_SEPOLIA.address,
+    symbol: FBTC20_BLAST_SEPOLIA.symbol as string,
+    name: FBTC20_BLAST_SEPOLIA.name as string,
+    decimals: FBTC20_BLAST_SEPOLIA.decimals,
+    logoURI: FBTC20ICON,
   },
   {
     chainId: SupportedChainId.BLAST_SEPOLIA,
-    address: USDC_BLAST_SEPOLIA.address,
-    symbol: USDC_BLAST_SEPOLIA.symbol as string,
-    name: USDC_BLAST_SEPOLIA.name as string,
-    decimals: USDC_BLAST_SEPOLIA.decimals,
-    logoURI:
-      'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png',
+    address: FBTC25_BLAST_SEPOLIA.address,
+    symbol: FBTC25_BLAST_SEPOLIA.symbol as string,
+    name: FBTC25_BLAST_SEPOLIA.name as string,
+    decimals: FBTC25_BLAST_SEPOLIA.decimals,
+    logoURI: FBTC20ICON,
   },
-  {
-    chainId: SupportedChainId.BLAST_SEPOLIA,
-    address: USDT_BLAST_SEPOLIA.address,
-    symbol: USDT_BLAST_SEPOLIA.symbol as string,
-    name: USDT_BLAST_SEPOLIA.name as string,
-    decimals: USDT_BLAST_SEPOLIA.decimals,
-    logoURI:
-      'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png',
-  },
+  // {
+  //   chainId: SupportedChainId.BLAST_SEPOLIA,
+  //   address: USDC_BLAST_SEPOLIA.address,
+  //   symbol: USDC_BLAST_SEPOLIA.symbol as string,
+  //   name: USDC_BLAST_SEPOLIA.name as string,
+  //   decimals: USDC_BLAST_SEPOLIA.decimals,
+  //   logoURI:
+  //     'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png',
+  // },
+  // {
+  //   chainId: SupportedChainId.BLAST_SEPOLIA,
+  //   address: USDT_BLAST_SEPOLIA.address,
+  //   symbol: USDT_BLAST_SEPOLIA.symbol as string,
+  //   name: USDT_BLAST_SEPOLIA.name as string,
+  //   decimals: USDT_BLAST_SEPOLIA.decimals,
+  //   logoURI:
+  //     'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png',
+  // },
 ]
 export default function Widget(props: PropsWithChildren<WidgetProps>) {
   const [dialog, setDialog] = useState<HTMLDivElement | null>(props.dialog || null)

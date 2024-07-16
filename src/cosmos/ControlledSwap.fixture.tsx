@@ -91,7 +91,7 @@ function Fixture() {
         {...eventHandlers}
         onAmountChange={onAmountChange}
       />
-      <EventFeed events={events} onClear={() => setEvents([])} />
+      {/* <EventFeed events={events} onClear={() => setEvents([])} /> */}
     </Row>
   )
 }

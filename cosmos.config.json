@@ -3,5 +3,6 @@
   "webpack": {
     "overridePath": "webpack.cosmos.js"
   },
-  "port": 3000
+  "port": 3000,
+  "publicUrl": "./"
 }
