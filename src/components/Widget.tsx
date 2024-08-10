@@ -1,5 +1,5 @@
 import { TokenInfo } from '@uniswap/token-lists'
-import FBTC20ICON from 'assets/svg/fbtc20.svg'
+import FBTC20ICON from 'assets/images/FBTC.png'
 import { DialogWidgetProps, Provider as DialogProvider } from 'components/Dialog'
 import ErrorBoundary, { OnError } from 'components/Error/ErrorBoundary'
 import { SupportedLocale } from 'constants/locales'
@@ -11,7 +11,7 @@ import { Provider as TokenListProvider } from 'hooks/useTokenList'
 import { Provider as Web3Provider, ProviderProps as Web3Props } from 'hooks/web3'
 import { Provider as I18nProvider } from 'i18n'
 import { Provider as AtomProvider } from 'jotai'
-import { PropsWithChildren, StrictMode, useState } from 'react'
+import { PropsWithChildren, StrictMode, useEffect, useState } from 'react'
 import { Provider as ReduxProvider } from 'react-redux'
 import { store } from 'state'
 import { MulticallUpdater } from 'state/multicall'
@@ -106,6 +106,16 @@ const blast_sepolia: TokenInfo[] = [
 ]
 export default function Widget(props: PropsWithChildren<WidgetProps>) {
   const [dialog, setDialog] = useState<HTMLDivElement | null>(props.dialog || null)
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      window.parent.postMessage({
+        id: "mappingfunk-uniswap-widgets",
+        iframeHeight: Math.min(document.body.offsetHeight, document.body.scrollHeight),
+        iframeSrc: window.location.href
+      }, '*');
+    }); resizeObserver.observe(document.body);
+  }, [])
   return (
     <StrictMode>
       <ThemeProvider theme={props.theme}>

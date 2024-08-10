@@ -108,11 +108,11 @@ function Fixture() {
       defaultChainId={defaultChainId}
       provider={connector}
       theme={{
-        container:"rgba(244, 246, 254, 1)",
-        module:"rgba(222, 241, 255, 1)",
-        primary:"rgba(97, 102, 119, 1)",
-        secondary:"rgba(0, 0, 0, 0.64)",
-        interactive:"rgba(110, 214, 243, 1)",
+        container: "rgba(244, 246, 254, 1)",
+        module: "rgba(222, 241, 255, 1)",
+        primary: "rgba(97, 102, 119, 1)",
+        secondary: "rgba(0, 0, 0, 0.64)",
+        interactive: "rgba(110, 214, 243, 1)",
         accent: "rgba(110, 214, 243, 1)"
       }}
       defaultInputTokenAddress={"0x684063aB93Aa493F8a1389cD2Fbc5E9fBd324A91"}
@@ -131,6 +131,7 @@ function Fixture() {
   // If framed in a different origin, only display the SwapWidget, without any chrome.
   // This is done to faciliate iframing in the documentation (https://docs.uniswap.org).
   // if (!window.frameElement) return widget
+
 
   return (
     <Row flex align="start" justify="start" gap={0.5}>
