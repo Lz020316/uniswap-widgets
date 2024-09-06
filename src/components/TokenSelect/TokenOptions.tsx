@@ -37,7 +37,7 @@ const TokenButton = styled(BaseButton)`
 `
 
 const ITEM_SIZE = 56
-const MIN_VISIBLE_TOKENS = 6
+const MIN_VISIBLE_TOKENS = 4
 type ItemData = Currency[]
 interface FixedSizeTokenList extends FixedSizeList<ItemData>, ComponentClass<FixedSizeListProps<ItemData>> {}
 const TokenList = styled(FixedSizeList as unknown as FixedSizeTokenList)<{

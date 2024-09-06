@@ -158,6 +158,14 @@ export const WBTC_BLAST_SEPOLIA = new Token(
   'WBTC',
   'WBTC'
 )
+export const WETH_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0x5A5df35102695D6e60B91e9C3F4CAA1b2B45c77F',
+  18,
+  'WETH',
+  'WETH'
+)
+
 export const FBTC20_BLAST_SEPOLIA = new Token(
   SupportedChainId.BLAST_SEPOLIA,
   '0x982Ebde77c10B7155A73d59c0437aC556F7F7b01',
@@ -173,10 +181,18 @@ export const FBTC25_BLAST_SEPOLIA = new Token(
   'F(FBTC,25)'
 )
 
+export const FETH_BLAST_SEPOLIA = new Token(
+  SupportedChainId.BLAST_SEPOLIA,
+  '0x1a5A59c69682d0bE488E4058D15278Bd250Be049',
+  6,
+  'F(FBTC,25)',
+  'F(FBTC,25)'
+)
+
 export const USDT_BLAST_SEPOLIA = new Token(
   SupportedChainId.BLAST_SEPOLIA,
-  '0xBfeC5826db705250f2AF5cC7C66910879b8EF930',
-  18,
+  '0xbfec5826db705250f2af5cc7c66910879b8ef930',
+  6,
   'USDT',
   'USDT'
 )

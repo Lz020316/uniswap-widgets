@@ -34,6 +34,7 @@ import {
   USDC_POLYGON,
   USDT,
   USDT_ARBITRUM_ONE,
+  USDT_BLAST_SEPOLIA,
   USDT_BNB_CHAIN,
   USDT_OPTIMISM,
   USDT_POLYGON,
@@ -41,6 +42,7 @@ import {
   WBTC_ARBITRUM_ONE,
   WBTC_BLAST_SEPOLIA,
   WBTC_OPTIMISM,
+  WETH_BLAST_SEPOLIA,
   WETH_POLYGON,
   WRAPPED_NATIVE_CURRENCY,
 } from './tokens'
@@ -107,6 +109,8 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     FBTC20_BLAST_SEPOLIA,
     FBTC25_BLAST_SEPOLIA,
     WBTC_BLAST_SEPOLIA,
+    USDT_BLAST_SEPOLIA,
+    WETH_BLAST_SEPOLIA,
   ],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {

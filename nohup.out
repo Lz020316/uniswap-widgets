@@ -13,3 +13,56 @@ webpack compiled successfully
 webpack building...
 webpack built 3de82ece576377438e5c in 3207ms
 webpack compiled successfully
+yarn run v1.22.22
+$ cosmos
+[Cosmos] Using cosmos config found at cosmos.config.json
+[Cosmos] See you at http://localhost:8000
+[Cosmos] Using default webpack config
+[Cosmos] Overriding webpack config at webpack.cosmos.js
+[Cosmos] Building webpack...
+rollup building...
+rollup built src/index.tsx in 16661ms
+webpack built ed607e4e3ebed7141653 in 33012ms
+webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/clientSideSmartOrderRouter-a311a5db.js
+webpack building...
+webpack built a537ca78a50af07da2d5 in 5745ms
+webpack compiled successfully
+rollup building...
+[Cosmos] webpack build invalidated by dist/index.js
+webpack building...
+rollup built src/index.tsx in 3383ms
+webpack built 66542a799e20e9257c16 in 8587ms
+webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/locales/af-ZA.js
+webpack building...
+webpack built 66542a799e20e9257c16 in 630ms
+webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/index.js
+webpack building...
+webpack built 66542a799e20e9257c16 in 8070ms
+webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/index.js
+webpack building...
+webpack built 66542a799e20e9257c16 in 6788ms
+webpack compiled successfully
+rollup building...
+[Cosmos] webpack build invalidated by dist/index.js
+webpack building...
+rollup built src/index.tsx in 4638ms
+webpack built c4ae37c5c1d46e5790b5 in 10019ms
+webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/locales/zh-TW.js
+webpack building...
+webpack built c4ae37c5c1d46e5790b5 in 883ms
+webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/index.js
+webpack building...
+webpack built c4ae37c5c1d46e5790b5 in 7056ms
+webpack compiled successfully
+rollup building...
+[Cosmos] webpack build invalidated by dist/locales/af-ZA.js
+webpack building...
+rollup built src/index.tsx in 4741ms
+webpack built d9993b540b0b8845d3f0 in 11828ms
+webpack compiled successfully

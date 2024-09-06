@@ -1,5 +1,8 @@
 import { TokenInfo } from '@uniswap/token-lists'
 import FBTC20ICON from 'assets/images/FBTC.png'
+import FETHICON from 'assets/svg/FETH.svg'
+import USDTICON from 'assets/svg/USDT.svg'
+import WETHICON from 'assets/svg/WETH.png'
 import { DialogWidgetProps, Provider as DialogProvider } from 'components/Dialog'
 import ErrorBoundary, { OnError } from 'components/Error/ErrorBoundary'
 import { SupportedLocale } from 'constants/locales'
@@ -19,7 +22,7 @@ import styled from 'styled-components/macro'
 import { Provider as ThemeProvider, Theme } from 'theme'
 
 import { SupportedChainId } from '../constants/chains'
-import { FBTC20_BLAST_SEPOLIA, FBTC25_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from '../constants/tokens'
+import { FBTC20_BLAST_SEPOLIA, FBTC25_BLAST_SEPOLIA, WETH_BLAST_SEPOLIA, FETH_BLAST_SEPOLIA, USDT_BLAST_SEPOLIA, WBTC_BLAST_SEPOLIA } from '../constants/tokens'
 import WidgetWrapper from './WidgetWrapper'
 
 export const DialogWrapper = styled.div`
@@ -85,6 +88,30 @@ const blast_sepolia: TokenInfo[] = [
     decimals: FBTC25_BLAST_SEPOLIA.decimals,
     logoURI: FBTC20ICON,
   },
+  {
+    chainId: SupportedChainId.BLAST_SEPOLIA,
+    address: USDT_BLAST_SEPOLIA.address,
+    symbol: USDT_BLAST_SEPOLIA.symbol as string,
+    name: USDT_BLAST_SEPOLIA.name as string,
+    decimals: USDT_BLAST_SEPOLIA.decimals,
+    logoURI: USDTICON,
+  },
+  {
+    chainId: SupportedChainId.BLAST_SEPOLIA,
+    address: FETH_BLAST_SEPOLIA.address,
+    symbol: FETH_BLAST_SEPOLIA.symbol as string,
+    name: FETH_BLAST_SEPOLIA.name as string,
+    decimals: FETH_BLAST_SEPOLIA.decimals,
+    logoURI: FETHICON,
+  },
+  {
+    chainId: SupportedChainId.BLAST_SEPOLIA,
+    address: WETH_BLAST_SEPOLIA.address,
+    symbol: WETH_BLAST_SEPOLIA.symbol as string,
+    name: WETH_BLAST_SEPOLIA.name as string,
+    decimals: WETH_BLAST_SEPOLIA.decimals,
+    logoURI: WETHICON,
+  }
   // {
   //   chainId: SupportedChainId.BLAST_SEPOLIA,
   //   address: USDC_BLAST_SEPOLIA.address,
