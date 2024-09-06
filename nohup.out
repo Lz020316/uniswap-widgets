@@ -66,3 +66,11 @@ webpack building...
 rollup built src/index.tsx in 4741ms
 webpack built d9993b540b0b8845d3f0 in 11828ms
 webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/index.js
+webpack building...
+webpack built d9993b540b0b8845d3f0 in 568ms
+webpack compiled successfully
+[Cosmos] webpack build invalidated by dist/index.js
+webpack building...
+webpack built d9993b540b0b8845d3f0 in 7071ms
+webpack compiled successfully
